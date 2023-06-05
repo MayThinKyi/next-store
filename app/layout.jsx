@@ -4,6 +4,7 @@ import { Providers } from './redux/Provider'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 import { SiderBarProvider } from './context/ContextProvider'
+import Cart from '@/components/Cart'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
         <Providers>
        <Navbar/>
        <Sidebar/>
+       <Cart/>
         {children}
 
         </Providers>
