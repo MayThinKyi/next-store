@@ -3,7 +3,7 @@ import Image from 'next/image'
 import QtyAndAddToCartBtn from '@/components/Qty&AddToCartBtn';
 
 const fetchProductById=async(id)=>{
-    //await new Promise(resolve => setTimeout(resolve, 10000)); 
+    await new Promise(resolve => setTimeout(resolve, 2000)); 
 
     const res=await fetch(`https://fakestoreapi.com/products/${id}`)
     const data=await res.json();
@@ -13,6 +13,7 @@ const ProductPage =async ({params}) => {
     const productData=await fetchProductById(params?.id)
   return (
     <div className='px-5 py-20 sm:px-10 lg:px-20'>
+     
       <div className='flex flex-wrap gap-12 md:flex-nowrap'> 
             <Image width={350} height={300} className='mx-auto h-[200px]  md:h-[300px] object-contain' alt={productData?.title} src={productData?.image}/>
             <div className='mt-[-10px] md:mt-0'>

@@ -3,7 +3,7 @@ import React from 'react'
 import {GrAdd} from 'react-icons/gr';
 import {AiOutlineMinus} from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux';
-import { addQty ,minusQty} from '@/app/redux/features/cartSlice';
+import { addQty ,minusQty, removeItem} from '@/app/redux/features/cartSlice';
 
 const CartItem = ({cartId,productId,img,title,qty,price}) => {
     const dispatch=useDispatch()
@@ -20,6 +20,7 @@ const CartItem = ({cartId,productId,img,title,qty,price}) => {
         <h1 >{qty}</h1>
         <GrAdd onClick={()=>dispatch(addQty({cartId:cartId}))} className='font-semibold'/>
         </div>
+        <h1 onClick={()=>dispatch(removeItem({cartId:cartId}))} className='px-3 py-1 text-sm text-red-500 border border-red-500 rounded'>Remove</h1>
            
             <h1>${price}</h1>
         </div>

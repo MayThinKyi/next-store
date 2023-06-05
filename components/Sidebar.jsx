@@ -17,7 +17,7 @@ await new Promise(resolve => setTimeout(resolve, 500));
   }
   return (<>
   {siderBarState? 
-    <div className='fixed top-0 right-0 left-0 bottom-0 bg-[rgba(0,0,0,.5)]'>
+    <div className='fixed  z-[999] top-0 right-0 left-0 bottom-0 bg-[rgba(0,0,0,.5)]'>
         <div className='relative z-[999] transition-all ease-in-out  p-8 top-0 left-0 h-[100vh] w-[290px] sm:w-[400px] bg-[#000]'>
             <div  onClick={()=>setSideBarState(!siderBarState)} className='flex justify-end text-white'>
                 <CgClose className='cursor-pointer'  size={28} color='#fff'/>
